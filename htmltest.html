@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miljökalkylator</title>
+    <style>
+        /* Grundinställningar för hela sidan */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #e8f5e9; /* Ljusgrön bakgrundsfärg */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #4CAF50; /* Grön header */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Styling för huvudsektionen */
+        #calculator-page {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff; /* Ljust bakgrundsfärg */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #calculator-page h2 {
+            font-size: 1.8rem;
+            color: #4CAF50; /* Matcha färgen med header */
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        #environmentQuiz {
+            margin-bottom: 20px;
+        }
+
+        #environmentQuiz div {
+            margin-bottom: 15px;
+        }
+
+        #environmentQuiz p {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        #environmentQuiz label {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        /* Stil för knapparna */
+        button {
+            background-color: #4CAF50; /* Grön knappfärg */
+            color: white;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Ändra hover färg */
+        }
+
+        /* Stil för poängen och feedback */
+        #totalScore {
+            font-weight: bold;
+            color: #4CAF50;
+            font-size: 1.5rem;
+        }
+
+        #resultFeedback {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Responsiv design */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            #calculator-page {
+                padding: 15px;
+            }
+
+            button {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+
+            #calculator-page h2 {
+                font-size: 1.5rem;
+            }
+
+            #environmentQuiz p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Miljökalkylator</h1>
+    </header>
+
+    <section id="calculator-page">
+        <h2>Din personliga miljöpåverkan</h2>
+        <div id="environmentQuiz"></div>
+        <canvas id="co2Chart" width="400" height="200"></canvas>
+        <h3>Din totala poäng: <span id="totalScore"></span></h3>
+        <div id="resultFeedback"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hållbarhetsportalen. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="hållbarighettest.js"></script>
+</body>
+</html>
